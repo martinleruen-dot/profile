@@ -1,4 +1,4 @@
-/* Variables Globales */
+/* Variables Globales Premium */
 :root {
   --navy: #0F172A;
   --tech-blue: #2563EB;
@@ -10,7 +10,7 @@
   --font-stack: 'Helvetica Neue', Helvetica, Arial, sans-serif;
 }
 
-/* Styles de Base */
+/* Base */
 body {
   background-color: var(--bg-slate);
   color: var(--navy);
@@ -25,11 +25,11 @@ a {
   text-decoration: none;
 }
 
-/* Navigation */
+/* Navigation Navbar */
 .navbar {
   background-color: #FFFFFF;
   border-bottom: 1px solid var(--border-color);
-  padding: 18px 0;
+  padding: 16px 0;
   position: sticky;
   top: 0;
   z-index: 100;
@@ -45,16 +45,15 @@ a {
 }
 
 .nav-brand {
-  font-weight: 700;
+  font-weight: 800;
   font-size: 18px;
   color: var(--navy);
-  text-transform: uppercase;
-  letter-spacing: 1px;
+  letter-spacing: 0.5px;
 }
 
 .nav-links a {
   color: var(--text-dark);
-  margin-left: 24px;
+  margin-left: 20px;
   font-weight: 500;
   font-size: 14px;
   transition: color 0.2s ease;
@@ -78,13 +77,13 @@ a {
 /* Hero Section */
 .hero {
   background-color: #FFFFFF;
-  padding: 90px 20px;
+  padding: 100px 20px;
   text-align: center;
   border-bottom: 1px solid var(--border-color);
 }
 
 .hero-container {
-  max-width: 750px;
+  max-width: 800px;
   margin: 0 auto;
 }
 
@@ -96,14 +95,15 @@ a {
   border-radius: 50px;
   font-size: 13px;
   font-weight: 600;
-  margin-bottom: 20px;
+  margin-bottom: 24px;
 }
 
 .hero h1 {
-  font-size: 44px;
+  font-size: 46px;
   color: var(--navy);
-  line-height: 1.2;
+  line-height: 1.15;
   margin-bottom: 20px;
+  font-weight: 800;
 }
 
 .text-blue {
@@ -111,7 +111,7 @@ a {
 }
 
 .hero-subtitle {
-  font-size: 18px;
+  font-size: 19px;
   color: var(--text-light);
   margin-bottom: 35px;
 }
@@ -144,7 +144,32 @@ a {
   background-color: var(--bg-slate);
 }
 
-/* Layout Containers */
+/* Compétences Board */
+.skills-board {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px;
+  margin-top: -20px;
+}
+
+.skill-tag {
+  background-color: #FFFFFF;
+  border: 1px solid var(--border-color);
+  padding: 6px 14px;
+  border-radius: 50px;
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--text-dark);
+}
+
+.skill-tag.active {
+  background-color: var(--navy);
+  color: #FFFFFF;
+  border-color: var(--navy);
+}
+
+/* Conteneurs Layout */
 .main-container {
   max-width: 900px;
   margin: 0 auto;
@@ -152,97 +177,86 @@ a {
 }
 
 .section-block {
-  padding: 40px 0;
+  padding: 45px 0;
 }
 
 .section-title {
   font-size: 22px;
   color: var(--navy);
-  margin-bottom: 25px;
+  margin-bottom: 30px;
   display: flex;
   align-items: center;
-  gap: 10px;
+  gap: 12px;
 }
 
 .section-title i {
   color: var(--tech-blue);
 }
 
-.section-intro {
-  font-size: 16px;
-  color: var(--text-dark);
-  margin-bottom: 25px;
-}
-
-/* Grilles et colonnes */
-.grid-2 {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 20px;
-}
-
-.grid-3 {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 20px;
-}
-
-@media (max-width: 768px) {
-  .grid-3 {
-    grid-template-columns: 1fr;
-  }
-}
-
-@media (max-width: 640px) {
-  .grid-2 {
-    grid-template-columns: 1fr;
-  }
-  .thesis-stats {
-    grid-template-columns: 1fr;
-    gap: 15px;
-  }
-  .stat-label-full {
-    text-align: left;
-  }
-}
-
-/* Cartes Premium */
+/* Cartes Expériences */
 .card-large {
   background-color: #FFFFFF;
   border: 1px solid var(--border-color);
   border-radius: 12px;
   padding: 35px;
-  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.02);
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.01);
+  margin-bottom: 25px;
+}
+
+.timeline-item {
+  position: relative;
+  border-left: 3px solid var(--border-color);
+  border-radius: 0 12px 12px 0;
+  padding-left: 35px;
+}
+
+.timeline-item::before {
+  content: '';
+  position: absolute;
+  left: -9px;
+  top: 40px;
+  width: 15px;
+  height: 15px;
+  background-color: #FFFFFF;
+  border: 3px solid var(--tech-blue);
+  border-radius: 50%;
 }
 
 .card-header-job {
   display: flex;
   justify-content: space-between;
   align-items: flex-start;
-  margin-bottom: 15px;
+  margin-bottom: 20px;
   border-bottom: 1px solid var(--border-color);
   padding-bottom: 15px;
 }
 
 .card-header-job h3 {
-  margin: 0;
+  margin: 0 0 5px 0;
   font-size: 20px;
+  color: var(--navy);
+}
+
+.job-meta {
+  margin: 0;
+  font-size: 13.5px;
+  color: var(--text-light);
+  font-weight: 500;
 }
 
 .company-tag {
-  background-color: #15803D;
   color: #FFFFFF;
-  padding: 4px 12px;
+  padding: 5px 12px;
   border-radius: 4px;
-  font-size: 12px;
+  font-size: 11px;
   font-weight: 700;
-  letter-spacing: 1px;
+  letter-spacing: 0.5px;
 }
 
-.job-description {
-  font-size: 15.5px;
-  margin-bottom: 15px;
-}
+.company-tag.lacoste { background-color: #004526; }
+.company-tag.zapa { background-color: #1A1A1A; }
+.company-tag.dentsu { background-color: #3B82F6; }
+.company-tag.bds { background-color: #EA580C; }
 
 .job-bullets {
   padding-left: 20px;
@@ -252,9 +266,10 @@ a {
 .job-bullets li {
   margin-bottom: 10px;
   color: var(--text-dark);
+  font-size: 15px;
 }
 
-/* Section Mémoire Spécifique */
+/* Section Mémoire Thématique */
 .bg-accent {
   background-color: #F1F5F9;
   padding: 40px 30px;
@@ -267,12 +282,11 @@ a {
   text-transform: uppercase;
   color: var(--text-light);
   font-weight: 600;
-  letter-spacing: 0.5px;
 }
 
 .bg-accent h3 {
   font-size: 22px;
-  margin: 8px 0 15px 0;
+  margin: 10px 0 15px 0;
   color: var(--navy);
 }
 
@@ -285,43 +299,64 @@ a {
 .thesis-stats {
   display: grid;
   grid-template-columns: auto auto 1fr;
-  gap: 30px;
+  gap: 40px;
   align-items: center;
   border-top: 1px solid var(--border-color);
-  padding-top: 20px;
+  padding-top: 25px;
 }
 
-.stat-item {
-  display: flex;
-  flex-direction: column;
+.stat-item { display: flex; flex-direction: column; }
+.stat-number { font-size: 28px; font-weight: 800; color: var(--tech-blue); }
+.stat-label { font-size: 12px; color: var(--text-light); font-weight: 500; }
+.stat-label-full { font-size: 13px; color: var(--text-light); font-style: italic; text-align: right; }
+
+/* Stats BDS Custom */
+.stats-bds {
+  margin-top: 20px;
 }
 
-.stat-number {
-  font-size: 26px;
-  font-weight: 800;
-  color: var(--tech-blue);
+.bds-stat-card {
+  background-color: var(--bg-slate);
+  border: 1px solid var(--border-color);
+  padding: 15px;
+  border-radius: 8px;
+  text-align: center;
 }
 
-.stat-label {
-  font-size: 12px;
-  color: var(--text-light);
-  font-weight: 500;
+.bds-stat-card h4 {
+  margin: 0 0 5px 0;
+  font-size: 20px;
+  color: #EA580C;
+  font-weight: 700;
 }
 
-.stat-num-label, .stat-label-full {
+.bds-stat-card p {
+  margin: 0;
   font-size: 13px;
-  color: var(--text-light);
-  font-style: italic;
-  text-align: right;
+  color: var(--text-dark);
 }
 
-/* Cartes Passions & Intérêts */
-.card-small {
+/* Grilles & Cartes Annexes */
+.grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+.grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+
+@media (max-width: 768px) {
+  .grid-3, .grid-2, .thesis-stats { grid-template-columns: 1fr; gap: 20px; }
+  .stat-label-full { text-align: left; }
+}
+
+.bg-white-rounded {
   background-color: #FFFFFF;
   border: 1px solid var(--border-color);
-  border-radius: 12px;
+  padding: 35px;
+  border-radius: 16px;
+}
+
+.card-small {
+  background-color: var(--bg-slate);
+  border: 1px solid var(--border-color);
+  border-radius: 10px;
   padding: 25px;
-  text-align: left;
 }
 
 .icon-box {
@@ -337,89 +372,62 @@ a {
   margin-bottom: 15px;
 }
 
-.card-small h3 {
-  margin: 0 0 10px 0;
-  font-size: 18px;
+.card-small h3 { margin: 0 0 10px 0; font-size: 17px; }
+.card-small p { margin: 0; font-size: 14px; color: var(--text-dark); }
+
+/* Bannière Voyage */
+.card-travel-banner {
+  margin-top: 25px;
+  background: linear-gradient(to right, #F0FDF4, #FFFFFF);
+  border: 1px solid #DCFCE7;
+  padding: 25px;
+  border-radius: 10px;
 }
 
-.card-small p {
-  margin: 0;
-  font-size: 14.5px;
-}
-
-/* Cartes Spécifiques Voyages */
-.bg-light-section {
-  background-color: #FFFFFF;
-  border: 1px solid var(--border-color);
-  border-radius: 16px;
-  padding: 35px;
-}
-
-.card-travel {
-  background-color: var(--bg-slate);
-  border: 1px solid var(--border-color);
-  border-radius: 8px;
-  padding: 20px;
-  transition: all 0.3s ease;
-}
-
-.card-travel:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.04);
-  border-color: #CBD5E1;
-}
-
-.travel-date {
+.travel-badge {
+  display: inline-block;
   font-size: 11px;
   text-transform: uppercase;
-  background-color: #FFFFFF;
-  border: 1px solid var(--border-color);
-  padding: 3px 8px;
+  background-color: #DCFCE7;
+  color: #166534;
+  padding: 4px 10px;
   border-radius: 4px;
   font-weight: 600;
-  color: var(--tech-blue);
+  margin-bottom: 10px;
 }
 
-.card-travel h3 {
-  font-size: 16px;
-  margin: 12px 0 8px 0;
+.card-travel-banner h3 { margin: 0 0 8px 0; font-size: 17px; color: var(--navy); }
+.card-travel-banner p { margin: 0; font-size: 14px; color: var(--text-dark); }
+
+/* Contact Card Section */
+.contact-card {
+  background: linear-gradient(135deg, #FFFFFF 0%, #F8FAFC 100%);
+  padding: 45px;
+}
+
+.contact-info {
+  font-size: 17px;
+  font-weight: 600;
   color: var(--navy);
+  margin: 20px 0;
 }
 
-.card-travel p {
-  margin: 0;
-  font-size: 13.5px;
-  color: var(--text-dark);
-}
-
-/* Contact & Footer */
-.text-center {
-  text-align: center;
-}
-
-.social-grid {
-  display: flex;
-  justify-content: center;
-  gap: 15px;
-  margin-top: 20px;
-}
-
+.social-grid { display: flex; justify-content: center; margin-top: 20px; }
 .social-link {
-  background-color: var(--bg-slate);
-  color: var(--text-dark);
-  padding: 10px 20px;
-  border-radius: 6px;
-  font-weight: 500;
-  font-size: 14px;
-  border: 1px solid var(--border-color);
-  transition: all 0.2s ease;
-}
-
-.social-link:hover {
   background-color: var(--navy);
   color: #FFFFFF;
+  padding: 12px 28px;
+  border-radius: 6px;
+  font-weight: 600;
+  font-size: 15px;
+  transition: background-color 0.2s ease;
 }
 
+.social-link:hover { background-color: var(--tech-blue); }
+
+.text-center { text-align: center; }
+
+/* Main Footer */
 .main-footer {
   text-align: center;
   padding: 40px 20px;
